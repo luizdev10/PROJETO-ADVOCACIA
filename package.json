@@ -1,0 +1,39 @@
+{
+<<<<<<< HEAD
+  "name": "site-adv",
+=======
+  "name": "climatizacao",
+>>>>>>> 4d1bb15d5839de120755d7b09595892fcf213dc0
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "oxlint",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+<<<<<<< HEAD
+    "lucide-react": "^1.39.0",
+=======
+>>>>>>> 4d1bb15d5839de120755d7b09595892fcf213dc0
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+<<<<<<< HEAD
+    "@tailwindcss/vite": "^4.3.3",
+=======
+>>>>>>> 4d1bb15d5839de120755d7b09595892fcf213dc0
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "@vitejs/plugin-react": "^6.1.0",
+    "oxlint": "^1.79.0",
+<<<<<<< HEAD
+    "tailwindcss": "^4.3.3",
+=======
+>>>>>>> 4d1bb15d5839de120755d7b09595892fcf213dc0
+    "vite": "^8.2.2"
+  }
+}
