@@ -43,7 +43,7 @@ export default function NavBar() {
     return (
         <>
             <nav className="bg-amber-400 top-0 left-0 z-50 fixed w-full ">
-                <div className="flex justify-around mx-auto px-5 m-w-7xl h-20">
+                <div className="flex justify-between mx-auto px-5 m-w-7xl h-20">
                     <img src={logo}
                         alt="Logo do site" />
                     <ul className="hidden gap-10 items-center md:flex">
