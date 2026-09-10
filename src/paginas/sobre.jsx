@@ -23,8 +23,8 @@ export default function Sobre() {
     ]
     return (
         <>
-            <section className="bg-gray-100 py-4 flex flex-col items-center">
-                <div className="text-center px-5 flex items-center flex-col ">
+            <section id="sobre" className="bg-gray-100 py-4 flex flex-col items-center">
+                <div className="text-center px-5 flex items-center flex-col pt-20">
                     <h1 className="text-gray-900 text-5xl pb-4 font-semibold">Sobre Nós</h1>
                     <div className="bg-amber-400 h-0.5 w-40 rounded "></div>
                     <p className="text-2xl pb-5 font-bold text-amber-700">Nossa História & Propósito</p>

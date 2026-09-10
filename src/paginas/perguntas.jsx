@@ -64,12 +64,8 @@ export default function Perguntas() {
     resposta: "Acompanhamento jurídico imediato é essencial para garantir os direitos constitucionais do intimado ou detido, acompanhar depoimentos e avaliar pedidos de liberdade provisória ou relaxamento de prisão."
   }
 ];
-   const checkQuestion = (index) => {
-    setOpenQuestions(openQuestions === index ? null : index);
-   };
-
   return (
-    <section className="py-16 bg-gray-900 text-white px-6">
+    <section id="perguntas" className="py-16 bg-gray-900 text-white px-6">
       <div className="max-w-4xl mx-auto">
         <h2 className="text-3xl md:text-4xl font-bold font-titulo text-[#C5A059] text-center mb-3">
           Dúvidas Frequentes
@@ -77,18 +73,35 @@ export default function Perguntas() {
         <p className="text-gray-400 text-center mb-10">
           Respostas rápidas para as principais perguntas dos nossos clientes.
         </p>
-                <div className="space-y-2">
-                    {faqs.map((item , index)=>(
-                        <div key={index} className="flex flex-col">
-                         <button onClick={()=> checkQuestion(index)} className="w-full flex  flex-col items-center justify-between bg-white text-gray-900 p-4 rounded-lg border border-gray-200 transition-all">
-                            <span className="font-medium">{item.pergunta}</span>
-                            <ChevronDown className={`${openQuestions === index ? "rotate-180" : "rotate-0"} transition-all`}
-                            />
-                            {openQuestions === index && <p className="bg-white text-gray-900 p-4 rounded-lg border border-gray-200 mt-2">{item.resposta}</p> }
-                            </button>   
-                        </div>
-                    ))}
-                </div>
+        <div className="space-y-2">
+          {faqs.map((item, index) => {
+            const isOpen = openQuestions === index;
+            return (
+              <div key={index} className="flex flex-col">
+                <button
+                  onClick={() => toggleQuestion(index)}
+                  className={`w-full flex flex-row items-center justify-between bg-white text-gray-900 p-4 rounded-lg transition-all ${
+                    isOpen
+                      ? "border-amber-500 shadow-md rounded-b-none"
+                      : "border-gray-700"
+                  }`}
+                >
+                  <span className="font-medium text-left">{item.pergunta}</span>
+                  <ChevronDown
+                    className={`${
+                      isOpen ? "rotate-180" : "rotate-0"
+                    } transition-all`}
+                  />
+                </button>
+                {isOpen && (
+                  <div className="bg-white text-gray-900 p-4 rounded-b-lg border-1 border-gray-200">
+                    <p>{item.resposta}</p>
+                  </div>
+                )}
+              </div>
+            );
+          })}
+        </div>
       </div>
     </section>
     )

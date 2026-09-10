@@ -52,7 +52,7 @@ export default function Atuacao() {
     }
   ];
   return (
-    <section className="bg-gray-100 py-4">
+    <section id="atuacao" className="bg-gray-100 py-4">
       <div className="text-center px-5">
         <h1 className="text-gray-900 text-3xl pb-4">Como Ajudamos Você</h1>
         <p className="text-xl pb-5 text-gray-900 font-light">Atendimento especializado e compromisso com a defesa dos seus interesses.</p>
