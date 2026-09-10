@@ -20,7 +20,7 @@ export default function Inicio() {
   return (
     <>
 
-      <section className=" bg-gray-800 h-screen overflow-hidden pt-20 flex flex-col justify-center">
+      <section className="bg-gradient-to-b from-gray-800 to-gray-500 h-screen overflow-hidden pt-20 flex flex-col justify-center">
      
         <div className="p-10 relative z-10 text-white">
           <h1 className="text-5xl font-[Roboto] text-amber-500 text-center">Soluções Jurídicas Ágeis</h1>
