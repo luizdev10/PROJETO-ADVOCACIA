@@ -1,6 +1,16 @@
-import { MapPin, Phone, Mail, Clock } from "lucide-react";
+import { MapPin, Phone, Mail, Clock, Target } from "lucide-react";
 
 export default function Contato() {
+
+  const enviowhats = () => {
+    const saudacao = "Olá, fulano, tudo bem?";
+    const nome = document.getElementById("nome").value;
+    const telefone = document.getElementById("telefone").value;
+    const email = document.getElementById("email").value;
+    const mensagem = document.getElementById("mensagem").value;
+    
+    window.open(`https://wa.me/+558888597138?text=${saudacao}%0A%0ANome:%20${nome}%0ATelefone:%20${telefone}%0AE-mail:%20${email}%0AMensagem:%20${mensagem}`, "_blank");
+  }
   return (
     <section id="contato" className="py-20 bg-gray-100">
       <div className="max-w-7xl mx-auto px-6">
@@ -13,7 +23,7 @@ export default function Contato() {
         </div>
 
         <div className="flex flex-col lg:flex-row gap-12">
-          {/* Informações de Contato */}
+         
           <div className="lg:w-1/3 flex flex-col gap-8">
             <div className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex flex-col gap-6 h-full">
               <h3 className="text-2xl font-bold text-gray-900 border-b border-gray-100 pb-4">Informações</h3>
@@ -34,7 +44,7 @@ export default function Contato() {
                 </div>
                 <div>
                   <p className="font-semibold text-gray-900">E-mail</p>
-                  <p className="text-gray-600 mt-1">contato@advocaciadantas.com.br</p>
+                  <p className="text-gray-600 mt-1">contato@exemplo.com.br</p>
                 </div>
               </div>
 
@@ -44,7 +54,7 @@ export default function Contato() {
                 </div>
                 <div>
                   <p className="font-semibold text-gray-900">Endereço</p>
-                  <p className="text-gray-600 mt-1">Av. Paulista, 1000 - Bela Vista<br/>São Paulo - SP</p>
+                  <p className="text-gray-600 mt-1">rua. exemplo, 123 - bairro exemplo<br/>Juazeiro do Norte - CE</p>
                 </div>
               </div>
 
@@ -60,7 +70,7 @@ export default function Contato() {
             </div>
           </div>
 
-          {/* Formulário de Contato */}
+
           <div className="lg:w-2/3">
             <form className="bg-white p-8 rounded-2xl shadow-lg border border-gray-100 flex flex-col gap-6">
               <h3 className="text-2xl font-bold text-gray-900 border-b border-gray-100 pb-4">Envie sua Mensagem</h3>
@@ -86,7 +96,8 @@ export default function Contato() {
                 <textarea id="mensagem" rows="4" className="border border-gray-300 rounded-lg p-3 focus:outline-none focus:border-[#C5A059] focus:ring-1 focus:ring-[#C5A059] transition-all resize-none" placeholder="Descreva brevemente o seu caso..."></textarea>
               </div>
 
-              <button type="button" className="bg-gray-900 text-white font-semibold py-4 rounded-lg hover:bg-[#C5A059] transition-colors duration-300 mt-2">
+              <button onClick={enviowhats} 
+              type="button" className="bg-gray-900 text-white font-semibold py-4 rounded-lg hover:bg-[#C5A059] transition-colors duration-300 mt-2">
                 Enviar Mensagem
               </button>
             </form>
