@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { X, Menu } from 'lucide-react'
-import logo from "../assets/img/logo.png"
+import logo from "../assets/img/adv_logo.svg"
 
 export default function NavBar() {
     const [MenuOpen, setMenuOpen] = useState(false)
@@ -45,8 +45,9 @@ export default function NavBar() {
             <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
                 
                 {/* Logo */}
-                <a href="#inicio" onClick={(e) => clique(e, "#inicio")} className="flex items-center gap-2 cursor-pointer">
-                    <img src={logo} alt="Logo Advocacia" className="h-12 w-auto object-contain" />
+                <a href="#inicio" onClick={(e) => clique(e, "#inicio")} className="flex items-center gap-3 cursor-pointer">
+                    <img src={logo} alt="Logo Advocacia" className="h-10 w-auto object-contain rounded-md shadow-lg" />
+                    <span className="text-xl md:text-2xl font-bold text-white tracking-widest uppercase">Advocacia</span>
                 </a>
 
                 {/* Desktop Menu */}
