@@ -1,2 +1,40 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200..800;1,200..800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Inter:wght@300;400;500;600&display=swap');
 @import "tailwindcss";
+
+@theme {
+  --font-titulo: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-sans: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  /* Paleta institucional: marinho profundo, marfim e dourado discreto */
+  --color-tinta: #0b1420;
+  --color-marinho: #111d2e;
+  --color-marinho-claro: #1a2940;
+  --color-marfim: #f5f2eb;
+  --color-papel: #fbfaf7;
+  --color-ouro: #a88a55;
+  --color-ouro-claro: #c8ae7f;
+  --color-linha: #e2dccf;
+  --color-texto: #2a3342;
+  --color-suave: #5d6675;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-papel text-texto font-sans antialiased;
+}
+
+::selection {
+  @apply bg-ouro/30 text-tinta;
+}
+
+/* Rótulo pequeno usado acima dos títulos das seções */
+.rotulo {
+  @apply inline-flex items-center gap-3 text-[11px] font-medium uppercase tracking-[0.3em] text-ouro;
+}
+.rotulo::before {
+  content: "";
+  @apply block h-px w-8 bg-ouro;
+}

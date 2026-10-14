@@ -34,36 +34,39 @@ export default function NavBar() {
 
     const link = [
         { id: 1, nome: "Início", url: "#inicio" },
-        { id: 2, nome: "Sobre", url: "#sobre" },
-        { id: 3, nome: "Atuação", url: "#atuacao" },
+        { id: 2, nome: "Atuação", url: "#atuacao" },
+        { id: 3, nome: "O Escritório", url: "#sobre" },
         { id: 4, nome: "Dúvidas", url: "#perguntas" },
         { id: 5, nome: "Contato", url: "#contato" }
     ]
 
     return (
-        <nav className={`fixed w-full top-0 left-0 z-50 transition-all duration-300 ${scrolled ? "bg-gray-900/95 backdrop-blur-md shadow-lg border-b border-gray-800 py-3" : "bg-transparent py-5"}`}>
+        <nav className={`fixed w-full top-0 left-0 z-50 transition-all duration-500 ${scrolled || MenuOpen ? "bg-tinta/95 backdrop-blur-sm border-b border-white/10 py-3" : "bg-transparent border-b border-transparent py-6"}`}>
             <div className="max-w-7xl mx-auto px-6 flex justify-between items-center">
-                
+
                 {/* Logo */}
                 <a href="#inicio" onClick={(e) => clique(e, "#inicio")} className="flex items-center gap-3 cursor-pointer">
-                    <img src={logo} alt="Logo Advocacia" className="h-10 w-auto object-contain rounded-md shadow-lg" />
-                    <span className="text-xl md:text-2xl font-bold text-white tracking-widest uppercase">Advocacia</span>
+                    <img src={logo} alt="" className="h-9 w-9 object-contain" />
+                    <span className="flex flex-col leading-none">
+                        <span className="font-titulo text-xl md:text-2xl font-semibold text-marfim tracking-wide">Dantas & Silva</span>
+                        <span className="text-[10px] uppercase tracking-[0.35em] text-ouro-claro mt-1">Advocacia</span>
+                    </span>
                 </a>
 
                 {/* Desktop Menu */}
-                <ul className="hidden md:flex items-center gap-8">
+                <ul className="hidden md:flex items-center gap-9">
                     {link.map((item) => (
                         <li key={item.id}>
-                            <a 
+                            <a
                                 href={item.url}
                                 onClick={(e) => clique(e, item.url)}
-                                className={`relative text-sm uppercase tracking-wider font-medium transition-colors duration-300 ${
-                                    Ativo === item.url ? "text-[#C5A059]" : "text-gray-300 hover:text-[#C5A059]"
+                                className={`relative text-[12px] uppercase tracking-[0.2em] transition-colors duration-300 ${
+                                    Ativo === item.url ? "text-ouro-claro" : "text-marfim/70 hover:text-marfim"
                                 }`}
                             >
                                 {item.nome}
                                 {/* Active Indicator */}
-                                <span className={`absolute -bottom-2 left-0 w-full h-0.5 bg-[#C5A059] transition-transform duration-300 ${
+                                <span className={`absolute -bottom-2 left-0 w-full h-px bg-ouro-claro transition-transform duration-300 ${
                                     Ativo === item.url ? "scale-x-100" : "scale-x-0"
                                 } origin-left`}></span>
                             </a>
@@ -74,24 +77,25 @@ export default function NavBar() {
                 {/* Mobile Menu Toggle */}
                 <button
                     onClick={() => setMenuOpen(!MenuOpen)}
-                    className="md:hidden text-gray-300 hover:text-[#C5A059] transition-colors"
+                    aria-label={MenuOpen ? "Fechar menu" : "Abrir menu"}
+                    className="md:hidden text-marfim/80 hover:text-ouro-claro transition-colors"
                 >
-                    {MenuOpen ? <X size={28} /> : <Menu size={28} />}
+                    {MenuOpen ? <X size={26} strokeWidth={1.5} /> : <Menu size={26} strokeWidth={1.5} />}
                 </button>
             </div>
 
             {/* Mobile Menu */}
-            <div className={`md:hidden absolute w-full bg-gray-900/95 backdrop-blur-md border-b border-gray-800 shadow-2xl transition-all duration-300 overflow-hidden ${
+            <div className={`md:hidden absolute w-full bg-tinta/95 backdrop-blur-sm border-b border-white/10 transition-all duration-300 overflow-hidden ${
                 MenuOpen ? "max-h-[400px] opacity-100" : "max-h-0 opacity-0"
             }`}>
-                <ul className="flex flex-col items-center py-6 gap-6">
+                <ul className="flex flex-col items-center py-8 gap-6">
                     {link.map((item) => (
                         <li key={item.id} className="w-full text-center">
                             <a
                                 href={item.url}
                                 onClick={(e) => clique(e, item.url)}
-                                className={`block w-full text-lg tracking-wide font-medium transition-colors ${
-                                    Ativo === item.url ? "text-[#C5A059]" : "text-gray-300 hover:text-[#C5A059]"
+                                className={`block w-full text-sm uppercase tracking-[0.25em] transition-colors ${
+                                    Ativo === item.url ? "text-ouro-claro" : "text-marfim/70 hover:text-marfim"
                                 }`}
                             >
                                 {item.nome}

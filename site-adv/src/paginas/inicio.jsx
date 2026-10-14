@@ -1,93 +1,86 @@
 import Photo from "../assets/img/photoini.png"
-import { MessageCircleMore, Scale, ShieldCheck, UserCheck } from "lucide-react";
+import { ArrowRight } from "lucide-react";
 
 export default function Inicio() {
   const quality = [
-    {
-      id: 1,
-      description: "Atendimento Agilizado",
-      icon: <MessageCircleMore className="w-5 h-5 text-amber-500" />
-    },
-    {
-      id: 2,
-      description: "Transparência Total",
-      icon: <ShieldCheck className="w-5 h-5 text-amber-500" />
-    },
-    {
-      id: 3,
-      description: "Atendimento Humanizado",
-      icon: <UserCheck className="w-5 h-5 text-amber-500" />
-    }
+    { id: 1, titulo: "Atendimento", description: "Presencial e online" },
+    { id: 2, titulo: "Transparência", description: "Em cada etapa do caso" },
+    { id: 3, titulo: "Sigilo", description: "Profissional absoluto" }
   ]
 
+  const irPara = (e, url) => {
+    e.preventDefault();
+    document.querySelector(url)?.scrollIntoView({ behavior: "smooth" });
+  };
+
   return (
-    <section id="inicio" className="relative min-h-screen bg-gray-900 flex items-center pt-20 overflow-hidden">
-   
-      <div className="absolute top-0 left-0 w-full h-full overflow-hidden z-0 pointer-events-none">
-        <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-amber-600/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] bg-gray-700/30 rounded-full blur-3xl"></div>
+    <section id="inicio" className="relative min-h-screen bg-tinta flex items-center pt-28 pb-16 overflow-hidden">
+
+      {/* Linhas verticais de fundo, discretas */}
+      <div className="absolute inset-0 pointer-events-none hidden lg:block" aria-hidden="true">
+        <div className="max-w-7xl mx-auto h-full px-6 grid grid-cols-4">
+          <div className="border-l border-white/[0.04]"></div>
+          <div className="border-l border-white/[0.04]"></div>
+          <div className="border-l border-white/[0.04]"></div>
+          <div className="border-l border-r border-white/[0.04]"></div>
+        </div>
       </div>
 
-      <div className="max-w-7xl mx-auto px-6 relative z-10 flex flex-col lg:flex-row items-center justify-between w-full">
-        
-      
-        <div className="lg:w-1/2 flex flex-col justify-center text-left max-w-2xl py-12">
-          <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-gray-800/80 border border-gray-700 w-fit mb-6 shadow-lg backdrop-blur-sm">
-            <Scale className="w-4 h-4 text-[#C5A059]" />
-            <span className="text-gray-300 text-sm font-medium tracking-wide uppercase">Escritório de Advocacia</span>
-          </div>
+      <div className="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-12 gap-16 items-center w-full">
 
-          <h1 className="text-5xl md:text-6xl lg:text-7xl font-bold font-titulo leading-tight mb-6">
-            <span className="text-white">Soluções Jurídicas</span> <br />
-            <span className="bg-gradient-to-r from-[#C5A059] to-amber-300 bg-clip-text text-transparent">Ágeis e Seguras</span>
+        <div className="lg:col-span-7 flex flex-col">
+          <span className="rotulo mb-8">Escritório de Advocacia</span>
+
+          <h1 className="font-titulo text-5xl md:text-6xl lg:text-7xl font-medium text-marfim leading-[1.05] mb-8">
+            Defesa jurídica conduzida com <em className="text-ouro-claro">rigor</em> e <em className="text-ouro-claro">discrição</em>.
           </h1>
-          
-          <p className="text-lg md:text-xl text-gray-400 font-light mb-10 leading-relaxed max-w-xl">
-            Atuação especializada em causas Previdenciárias, Trabalhistas, Cíveis e Criminais. Defendemos seus direitos com excelência.
+
+          <p className="text-base md:text-lg text-marfim/60 font-light mb-12 leading-relaxed max-w-xl">
+            Atuação especializada em Direito Previdenciário, Trabalhista, Cível e Criminal. Cada caso recebe análise individual e acompanhamento próximo, do primeiro atendimento à decisão final.
           </p>
-          
-          <div className="flex flex-col sm:flex-row gap-5 items-start sm:items-center mb-16">
-            <a href="#" className="group relative inline-flex items-center gap-3 bg-gradient-to-r from-[#C5A059] to-amber-600 rounded-full px-8 py-4 font-semibold text-white shadow-lg shadow-amber-500/20 hover:shadow-amber-500/40 transition-all duration-300 hover:-translate-y-1 overflow-hidden">
-              <div className="absolute inset-0 bg-white/20 translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-in-out"></div>
-              <MessageCircleMore className="relative z-10 w-5 h-5" />
-              <span className="relative z-10">Agendar Consulta Jurídica</span>
+
+          <div className="flex flex-col sm:flex-row gap-4 mb-16">
+            <a
+              href="#contato"
+              onClick={(e) => irPara(e, "#contato")}
+              className="group inline-flex items-center justify-center gap-3 bg-ouro text-tinta px-8 py-4 text-[12px] font-semibold uppercase tracking-[0.2em] hover:bg-ouro-claro transition-colors duration-300"
+            >
+              Agendar consulta
+              <ArrowRight className="w-4 h-4 transition-transform duration-300 group-hover:translate-x-1" strokeWidth={1.5} />
+            </a>
+            <a
+              href="#atuacao"
+              onClick={(e) => irPara(e, "#atuacao")}
+              className="inline-flex items-center justify-center px-8 py-4 border border-marfim/25 text-marfim/80 text-[12px] font-medium uppercase tracking-[0.2em] hover:border-ouro-claro hover:text-ouro-claro transition-colors duration-300"
+            >
+              Áreas de atuação
             </a>
           </div>
 
-          <div className="flex flex-wrap items-center gap-4 text-white font-medium">
-            {quality.map(item => (
-              <div key={item.id} className="flex items-center gap-3 bg-gray-800/50 border border-gray-700/50 backdrop-blur-md px-4 py-3 rounded-xl shadow-sm hover:border-[#C5A059]/50 transition-colors duration-300">
-                {item.icon}
-                <span className="text-gray-300 font-light text-sm">{item.description}</span>
+          <div className="grid grid-cols-3 border-t border-white/10 pt-8 max-w-xl">
+            {quality.map((item, i) => (
+              <div key={item.id} className={`${i > 0 ? "pl-5 border-l border-white/10" : ""} pr-5`}>
+                <p className="font-titulo text-xl md:text-2xl text-marfim mb-1">{item.titulo}</p>
+                <p className="text-xs text-marfim/50 font-light">{item.description}</p>
               </div>
             ))}
           </div>
         </div>
 
-    
-        <div className="lg:w-1/2 mt-16 lg:mt-0 relative hidden md:flex justify-end">
-          <div className="relative w-full max-w-lg aspect-[4/5] right-0">
-      
-            <div className="absolute inset-0 bg-gradient-to-tr from-[#C5A059]/20 to-transparent blur-3xl rounded-full translate-x-4 translate-y-4"></div>
-            
-       
-            <img 
-              src={Photo} 
-              alt="Advocacia" 
-              className="relative z-10 object-cover w-full h-full rounded-2xl shadow-2xl border border-gray-700/50 object-center"
+        <div className="lg:col-span-5 relative hidden md:block">
+          <div className="relative w-full max-w-md mx-auto lg:ml-auto aspect-[4/5]">
+            {/* Moldura deslocada */}
+            <div className="absolute inset-0 border border-ouro/40 translate-x-5 translate-y-5" aria-hidden="true"></div>
+
+            <img
+              src={Photo}
+              alt="Escritório Dantas & Silva Advocacia"
+              className="relative z-10 object-cover w-full h-full object-center grayscale-[35%]"
             />
-            
-    
-            <div className="absolute -bottom-8 -left-8 z-20 bg-gray-800/90 backdrop-blur-xl border border-gray-700/50 p-6 rounded-2xl shadow-2xl shadow-black/60 hover:-translate-y-2 transition-transform duration-300 hidden lg:block">
-              <div className="flex items-center gap-4">
-                <div className="w-12 h-12 bg-[#C5A059]/10 rounded-full flex items-center justify-center">
-                  <ShieldCheck className="w-6 h-6 text-[#C5A059]" />
-                </div>
-                <div>
-                  <p className="text-white font-bold text-xl">100%</p>
-                  <p className="text-gray-400 text-sm font-light">Sigilo e Segurança</p>
-                </div>
-              </div>
+
+            <div className="absolute -bottom-6 -left-6 z-20 bg-marfim px-6 py-5 hidden lg:block">
+              <p className="text-[10px] uppercase tracking-[0.3em] text-ouro mb-1">Desde a primeira consulta</p>
+              <p className="font-titulo text-xl text-tinta">Compromisso com a ética</p>
             </div>
           </div>
         </div>

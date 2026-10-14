@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { ChevronDown } from "lucide-react";
+import { Plus } from "lucide-react";
 
 export default function Perguntas() {
     const [openQuestions, setOpenQuestions] = useState(null);
@@ -65,44 +65,48 @@ export default function Perguntas() {
   }
 ];
   return (
-    <section id="perguntas" className="py-16 bg-gray-900 text-white px-6">
-      <div className="max-w-4xl mx-auto">
-        <h2 className="text-3xl md:text-4xl font-bold font-titulo text-[#C5A059] text-center mb-3">
-          Dúvidas Frequentes
-        </h2>
-        <p className="text-gray-400 text-center mb-10">
-          Respostas rápidas para as principais perguntas dos nossos clientes.
-        </p>
-        <div className="space-y-2">
+    <section id="perguntas" className="py-24 md:py-32 bg-marinho text-marfim">
+      <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 lg:gap-16">
+        <div className="lg:col-span-4">
+          <div className="lg:sticky lg:top-32">
+            <span className="rotulo mb-6">Dúvidas Frequentes</span>
+            <h2 className="font-titulo text-4xl md:text-5xl font-medium leading-tight mb-6">
+              Perguntas que recebemos com frequência
+            </h2>
+            <p className="text-marfim/60 font-light leading-relaxed">
+              Respostas objetivas para as principais questões dos nossos clientes. Cada caso, porém, merece análise individual.
+            </p>
+          </div>
+        </div>
+
+        <div className="lg:col-span-8 border-t border-white/10">
           {faqs.map((item, index) => {
             const isOpen = openQuestions === index;
             return (
-              <div key={index} className="flex flex-col">
+              <div key={index} className="border-b border-white/10">
                 <button
                   onClick={() => toggleQuestion(index)}
-                  className={`w-full flex flex-row items-center justify-between bg-white text-gray-900 p-4 rounded-lg transition-all ${
-                    isOpen
-                      ? "border-amber-500 shadow-md rounded-b-none"
-                      : "border-gray-700"
-                  }`}
+                  aria-expanded={isOpen}
+                  className="w-full flex items-start justify-between gap-6 py-6 text-left group"
                 >
-                  <span className="font-medium text-left">{item.pergunta}</span>
-                  <ChevronDown
-                    className={`${
-                      isOpen ? "rotate-180" : "rotate-0"
-                    } transition-all`}
+                  <span className={`font-titulo text-xl md:text-[22px] leading-snug transition-colors duration-300 ${isOpen ? "text-ouro-claro" : "text-marfim group-hover:text-ouro-claro"}`}>
+                    {item.pergunta}
+                  </span>
+                  <Plus
+                    strokeWidth={1.25}
+                    className={`mt-1 w-5 h-5 shrink-0 text-ouro-claro transition-transform duration-300 ${isOpen ? "rotate-45" : "rotate-0"}`}
                   />
                 </button>
-                {isOpen && (
-                  <div className="bg-white text-gray-900 p-4 rounded-b-lg border-1 border-gray-200">
-                    <p>{item.resposta}</p>
+                <div className={`grid transition-all duration-300 ease-out ${isOpen ? "grid-rows-[1fr] opacity-100" : "grid-rows-[0fr] opacity-0"}`}>
+                  <div className="overflow-hidden">
+                    <p className="pb-7 pr-10 text-marfim/65 font-light leading-relaxed">{item.resposta}</p>
                   </div>
-                )}
+                </div>
               </div>
             );
           })}
         </div>
       </div>
     </section>
-    )
+  )
 }
