@@ -27,7 +27,7 @@ export default function Contato() {
     <section id="contato" className="py-24 md:py-32 bg-papel">
       <div className="max-w-7xl mx-auto px-6">
         <div className="max-w-2xl mb-16 md:mb-20">
-          <span className="rotulo mb-6">Contato</span>
+          <span className="text-ouro mb-6 text-[15px] uppercase">Contato</span>
           <h2 className="font-titulo text-4xl md:text-5xl font-medium text-tinta leading-tight mb-6">Fale conosco</h2>
           <p className="text-suave font-light leading-relaxed">
             Estamos à disposição para analisar o seu caso. Entre em contato para agendar uma consulta.

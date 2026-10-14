@@ -69,7 +69,7 @@ export default function Perguntas() {
       <div className="max-w-7xl mx-auto px-6 grid lg:grid-cols-12 gap-12 lg:gap-16">
         <div className="lg:col-span-4">
           <div className="lg:sticky lg:top-32">
-            <span className="rotulo mb-6">Dúvidas Frequentes</span>
+            <span className="text-ouro mb-6 text-[15px] uppercase">Dúvidas Frequentes</span>
             <h2 className="font-titulo text-4xl md:text-5xl font-medium leading-tight mb-6">
               Perguntas que recebemos com frequência
             </h2>

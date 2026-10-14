@@ -56,7 +56,7 @@ export default function Atuacao() {
       <div className="max-w-7xl mx-auto px-6">
         <div className="grid lg:grid-cols-12 gap-8 mb-16 md:mb-20 items-end">
           <div className="lg:col-span-6">
-            <span className="rotulo mb-6">Áreas de Atuação</span>
+            <span className="text-ouro mb-6 text-[15px] uppercase">Áreas de Atuação</span>
             <h2 className="font-titulo text-4xl md:text-5xl font-medium text-tinta leading-tight">
               Como podemos ajudar você
             </h2>

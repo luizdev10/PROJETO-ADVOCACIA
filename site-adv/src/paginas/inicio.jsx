@@ -16,7 +16,7 @@ export default function Inicio() {
   return (
     <section id="inicio" className="relative min-h-screen bg-tinta flex items-center pt-28 pb-16 overflow-hidden">
 
-      {/* Linhas verticais de fundo, discretas */}
+    
       <div className="absolute inset-0 pointer-events-none hidden lg:block" aria-hidden="true">
         <div className="max-w-7xl mx-auto h-full px-6 grid grid-cols-4">
           <div className="border-l border-white/[0.04]"></div>
@@ -29,7 +29,7 @@ export default function Inicio() {
       <div className="max-w-7xl mx-auto px-6 relative z-10 grid lg:grid-cols-12 gap-16 items-center w-full">
 
         <div className="lg:col-span-7 flex flex-col">
-          <span className="rotulo mb-8">Escritório de Advocacia</span>
+          <span className="mb-8 text-ouro text-[20px]">Escritório de Advocacia</span>
 
           <h1 className="font-titulo text-5xl md:text-6xl lg:text-7xl font-medium text-marfim leading-[1.05] mb-8">
             Defesa jurídica conduzida com <em className="text-ouro-claro">rigor</em> e <em className="text-ouro-claro">discrição</em>.
@@ -69,7 +69,7 @@ export default function Inicio() {
 
         <div className="lg:col-span-5 relative hidden md:block">
           <div className="relative w-full max-w-md mx-auto lg:ml-auto aspect-[4/5]">
-            {/* Moldura deslocada */}
+          
             <div className="absolute inset-0 border border-ouro/40 translate-x-5 translate-y-5" aria-hidden="true"></div>
 
             <img

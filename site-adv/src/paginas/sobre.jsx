@@ -27,7 +27,7 @@ export default function Sobre() {
                 <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
 
                     <div className="lg:col-span-5">
-                        <span className="rotulo mb-6">O Escritório</span>
+                        <span className="text-ouro mb-6 text-[15px] uppercase">O Escritório</span>
                         <h2 className="font-titulo text-4xl md:text-5xl font-medium text-tinta leading-tight mb-8">
                             Nossa história <br className="hidden md:block" />& propósito
                         </h2>
